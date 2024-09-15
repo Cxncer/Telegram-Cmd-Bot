@@ -17,10 +17,12 @@ application = Application.builder().token(TOKEN).build()
 async def start(update: Update, context: CallbackContext):
     keyboard = [[KeyboardButton('/start'), KeyboardButton('/cancel')]]  # Create start/cancel buttons
     reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)   # Add buttons to the markup
+    # No message reply, just showing buttons in the menu
 
 # Cancel command handler
 async def cancel(update: Update, context: CallbackContext):
-    await update.message.reply_text("Operation cancelled.")
+    # No message reply, just handling the cancel command
+    pass
 
 # Define command handlers
 application.add_handler(CommandHandler('start', start))
@@ -29,4 +31,3 @@ application.add_handler(CommandHandler('cancel', cancel))
 # Run the bot with polling
 if __name__ == '__main__':
     application.run_polling()
-    
