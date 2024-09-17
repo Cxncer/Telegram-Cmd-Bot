@@ -18,7 +18,7 @@ async def start(update: Update, context: CallbackContext):
     # Create start, cancel, and restart buttons
     keyboard = [[KeyboardButton('/start'), KeyboardButton('/cancel'), KeyboardButton('/restart')]]  
     reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
-    await update.message.reply_text("Started! Joch Joch mes jui.")
+    # No reply, just handling the start command
 
 # Cancel command handler
 async def cancel(update: Update, context: CallbackContext):
